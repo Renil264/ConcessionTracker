@@ -143,8 +143,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
-
-                  /// CART ITEMS
+                  
                   ...cartItems.map((item) => Padding(
                         padding: EdgeInsets.only(bottom: screenHeight * 0.015),
                         child:

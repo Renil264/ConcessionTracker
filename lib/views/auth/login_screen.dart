@@ -199,7 +199,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 20,
                     height: 20,
                   ),
-                  onPressed: vm.isBusy ? null : () => vm.onGoogleTap(),
+                  onPressed: vm.isBusy ? null : () => vm.onGoogleTap(context),
+
                 ),
                 const SizedBox(height: 14),
 

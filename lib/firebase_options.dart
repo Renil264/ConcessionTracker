@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,9 +28,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -40,49 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCzB1gu59ebkx01SIbyoyc2-4tYwFdqmIE',
-    appId: '1:960170418592:web:7c45f162f18815347984c5',
-    messagingSenderId: '960170418592',
-    projectId: 'concessiontracker',
-    authDomain: 'concessiontracker.firebaseapp.com',
-    storageBucket: 'concessiontracker.firebasestorage.app',
-    measurementId: 'G-NPMDMBSDH1',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBwbGEh6fhSvgnoJN--FaGP2FkBWW7zdrg',
-    appId: '1:960170418592:android:b6d65b9b2c9a49cf7984c5',
-    messagingSenderId: '960170418592',
-    projectId: 'concessiontracker',
-    storageBucket: 'concessiontracker.firebasestorage.app',
+    apiKey: 'AIzaSyD-a0mLkCmOTPxh5m3aDgsGK7A1N_mOAh8',
+    appId: '1:680237986242:android:85cf1890f98e1e2b57665b',
+    messagingSenderId: '680237986242',
+    projectId: 'concessiontracker-e43f1',
+    storageBucket: 'concessiontracker-e43f1.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDniJjYdXf7uaWlAXgb07EL_3CB3lK8O-c',
-    appId: '1:960170418592:ios:7a1049e9b7193e517984c5',
-    messagingSenderId: '960170418592',
-    projectId: 'concessiontracker',
-    storageBucket: 'concessiontracker.firebasestorage.app',
-    iosBundleId: 'com.example.concessionTracker',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDniJjYdXf7uaWlAXgb07EL_3CB3lK8O-c',
-    appId: '1:960170418592:ios:7a1049e9b7193e517984c5',
-    messagingSenderId: '960170418592',
-    projectId: 'concessiontracker',
-    storageBucket: 'concessiontracker.firebasestorage.app',
-    iosBundleId: 'com.example.concessionTracker',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCzB1gu59ebkx01SIbyoyc2-4tYwFdqmIE',
-    appId: '1:960170418592:web:870b4f31af72342c7984c5',
-    messagingSenderId: '960170418592',
-    projectId: 'concessiontracker',
-    authDomain: 'concessiontracker.firebaseapp.com',
-    storageBucket: 'concessiontracker.firebasestorage.app',
-    measurementId: 'G-TJDJTRJ6RP',
+    apiKey: 'AIzaSyDtDIagJAG_8RPdhuWtKqYtZUm9Tuq2vWA',
+    appId: '1:680237986242:ios:c1fc2bfe419148cf57665b',
+    messagingSenderId: '680237986242',
+    projectId: 'concessiontracker-e43f1',
+    storageBucket: 'concessiontracker-e43f1.firebasestorage.app',
+    iosBundleId: 'com.esoftsys.concessionTracker',
   );
 }
