@@ -9,12 +9,6 @@ import 'views/auth/login_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
-  // Initialize google_sign_in singleton with Web client id (serverClientId)
-  await GoogleSignIn.instance.initialize(
-    serverClientId: '680237986242-m7b4hq8fftq6rurtcufjd2bgr5dsvbna.apps.googleusercontent.com',
-  );
-
   runApp(const StoreApp());
 }
 
