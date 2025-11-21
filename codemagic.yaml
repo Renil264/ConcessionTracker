@@ -1,0 +1,22 @@
+workflows:
+  ios-release:
+    name: "iOS Release Build"
+    environment:
+      vars:
+        COCOAPODS_CACHE_DISABLED: true
+
+    scripts:
+      - name: Clean CocoaPods & reinstall
+        script: |
+          echo "🔥 Cleaning old iOS Pods..."
+          cd ios
+          rm -rf Pods
+          rm -rf Podfile.lock
+          pod repo update
+          pod install
+          cd ..
+          echo "🔥 Fresh Pods installed."
+
+    publishing:
+      app_store:
+        # keep your existing publishing settings
